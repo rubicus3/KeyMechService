@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17.4
+    environment:
+      POSTGRES_DB: "keymech-db"
+      POSTGRES_USER: "keymech-user"
+      POSTGRES_PASSWORD: "keymech-pass"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
+      - ./postgres/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  fastapiapp:
+    build: .
+    ports:
+      - "8000:8000"
+volumes:
+  keymech-data:
