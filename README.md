@@ -12,4 +12,4 @@ Laucnh in production mode
 
 Launch in development mode with watch
 
-`docker composer up --watch`
+`docker compose up --watch`
