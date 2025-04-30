@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from pgdb import check_version
+from app.pgdb.db import check_version
 
 app = FastAPI()
 
