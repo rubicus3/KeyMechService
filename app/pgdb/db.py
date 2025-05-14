@@ -9,3 +9,4 @@ def check_version():
             cur.execute("SELECT version();")
             result = cur.fetchone()
             return result
+
