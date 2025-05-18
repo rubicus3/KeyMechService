@@ -5,49 +5,34 @@ from pydantic import BaseModel
 
 class Keyboard(BaseModel):
     id: int
-    name: str
-    price: float
-    form_factor: str
+    title: str
     manufacturer: str
+    price: float
     description: Optional[str]
     characteristics: Optional[Dict[str, str]]
     image_name: str
+    form_factor: str
 
 class Switch(BaseModel):
     id: int
-    name: str
-    price: float
-    type: str
+    short_title: str
+    title: str
     manufacturer: str
+    price: float
     description: Optional[str]
     characteristics: Optional[Dict[str, str]]
     image_name: str
+    switch_type: str
+    actuation_force: str
 
 class Keycap(BaseModel):
     id: int
-    name: str
-    price: float
-    material: str
+    title: str
     manufacturer: str
+    price: float
     description: Optional[str]
     characteristics: Optional[Dict[str, str]]
     image_name: str
-
-class FormFactor(BaseModel):
-    id: int
-    type: str
-
-class SwitchType(BaseModel):
-    id: int
-    type: str
-
-class KeycapMaterial(BaseModel):
-    id: int
     material: str
-
-class Manufacturer(BaseModel):
-    id: int
-    name: str
-
 
 
