@@ -24,6 +24,11 @@ To populate the database with data, launch project and run the filler python scr
 `cd dbfiller`
 `python3 filler.py`
 
+Replace pointer image lfs files with actual files
+
+`git lfs fetch --all`
+`git lfs checkout`
+
 ### Used containers
 
 

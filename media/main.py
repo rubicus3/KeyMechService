@@ -1,12 +1,18 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
+from starlette.responses import JSONResponse
 
 app = FastAPI()
 
 MEDIA_PATH = "/var/lib/media/images"
 
 
-@app.get("/")
-def hello():
-    return FileResponse(path=MEDIA_PATH + "/8529_63ae02b57d57a_Sword-2-87-Sakura.png")
+@app.get("/image/{image_name}")
+def hello(image_name: str):
+    path = MEDIA_PATH + "/" + image_name
+    if not os.path.isfile(path):
+        return JSONResponse(content="File does not exist", status_code=404)
+    return FileResponse(path=path)
 
