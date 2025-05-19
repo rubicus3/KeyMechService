@@ -12,7 +12,7 @@ services:
     ports:
       - "5432:5432"
   restapi:
-    build: .
+    build: ./rest
     ports:
       - "8000:8000"
     environment:
@@ -23,8 +23,18 @@ services:
     develop:
       watch:
         - action: sync+restart
-          path: ./app
-          target: /code/app
-
+          path: ./rest
+          target: /code/rest
+  media:
+    build: ./media
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./images:/var/lib/media/images
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./media
+          target: /code/media
 volumes:
   keymech-data:
