@@ -21,7 +21,8 @@ Launch in development mode in watch mode over source code changes
 
 To populate the database with data, launch project and run the filler python script from the ./dbfiller directory.
 
-`python3 dbfiller/filler.py`
+`cd dbfiller`
+`python3 filler.py`
 
 ### Used containers
 

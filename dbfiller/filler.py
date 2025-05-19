@@ -18,7 +18,7 @@ DB_CONN_INFO = f"host={host} dbname={dbname} user={user} password={password}"
 
 
 def load_keyboards():
-    con = sqlite3.connect("products.db")
+    con = sqlite3.connect("./rawdata.db")
     cur = con.cursor()
     cur.execute("SELECT * FROM keyboards")
     x = cur.fetchall()
@@ -46,7 +46,7 @@ def load_keyboards():
 
 
 def load_keycaps():
-    con = sqlite3.connect("products.db")
+    con = sqlite3.connect("./rawdata.db")
     cur = con.cursor()
     cur.execute("SELECT * FROM keycaps")
     x = cur.fetchall()
@@ -78,7 +78,7 @@ def load_keycaps():
 
 
 def load_switches():
-    con = sqlite3.connect("products.db")
+    con = sqlite3.connect("./rawdata.db")
     cur = con.cursor()
     cur.execute("SELECT * FROM switches")
     x = cur.fetchall()
