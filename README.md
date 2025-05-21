@@ -17,20 +17,19 @@ POSTGRES_HOST=postgres (Postgres container name)
 
 Launch in development mode in watch mode over source code changes 
 
-`docker compose up --watch`
+    docker compose up --watch
 
 To populate the database with data, launch project and run the filler python script from the ./dbfiller directory.
 
-`cd dbfiller`
-`python3 filler.py`
+    cd dbfiller
+    python3 filler.py
 
 Replace pointer image lfs files with actual files
 
-`git lfs fetch --all`
-`git lfs checkout`
+    git lfs fetch --all
+    git lfs checkout
 
-### Used containers
-
+## Used containers
 
 ### postgres
 
