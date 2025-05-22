@@ -79,7 +79,7 @@ def get_keycap_list(page: int) -> List[Keycap]:
 
     with psycopg.connect(DB_CONN_INFO) as conn:
         with conn.cursor() as cur:
-            cur.execute("SELECT * FROM keyboards ORDER BY id LIMIT %s OFFSET %s", (PAGE_LIIMT, PAGE_OFFSET))
+            cur.execute("SELECT * FROM keycaps ORDER BY id LIMIT %s OFFSET %s", (PAGE_LIIMT, PAGE_OFFSET))
             result = cur.fetchall()
     res = []
     for row in result:

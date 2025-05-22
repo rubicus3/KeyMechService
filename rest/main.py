@@ -45,4 +45,4 @@ def get_keycap_list(page: int = 1) -> List[Keycap]:
 
 @app.get("/get_popular_switches")
 def get_popular_switches() -> List[Switch]:
-    return [pgdb.get_switch_by_id(2), pgdb.get_switch_by_id(20),pgdb.get_switch_by_id(200)]
+    return [pgdb.get_switch_by_id(2), pgdb.get_switch_by_id(20),pgdb.get_switch_by_id(292)]
