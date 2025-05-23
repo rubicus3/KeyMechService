@@ -152,9 +152,9 @@ def get_orders(current_user: Annotated[User, Depends(get_current_user)]):
 
 
 @app.post("/register")
-async def registration(user_info: UserReg):
+async def registration(user_info: UserReg) -> Token | bool:
     if pgdb.register_user(user_info):
-        pass
-    return "Token()"
-    # token = await login_for_access_token(OAuth2PasswordRequestForm(username=user_info.username, password=user_info.password))
-    # return token
+        token = await login_for_access_token(
+            OAuth2PasswordRequestForm(username=user_info.phone_number, password=user_info.password))
+        return token
+    return False
