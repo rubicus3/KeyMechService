@@ -34,6 +34,22 @@ CREATE TABLE public.keycaps (
     material text
 );
 
+
+CREATE TABLE public.users (
+    id serial primary key,
+    phone_number text,
+    name text,
+    surname text,
+    hashed_password text
+);
+
+CREATE TABLE public.orders (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users (id) ON DELETE CASCADE,
+    date TEXT,
+    address TEXT,
+    total_sum REAL
+);
 --
 ---- 1. Таблица производителей
 --CREATE TABLE public.manufacturers (
